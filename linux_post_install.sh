@@ -1,22 +1,24 @@
+#!/bin/bash
+
 # apt repository
-apt update
+sudo apt update
 
 #  install Gnome Shell Extensions
-apt -y install gnome-shell-extension-manager
+sudo apt install gnome-shell-extension-manager -y
 
 # Install ddclient on Ubuntu 22.04
-apt -y install ddclient
+sudo apt install ddclient -y
 
 # Install OpenSSH on Ubuntu
-apt -y install openssh-server
-apt -y install openssh-client
+sudo apt install openssh-server -y
+sudo apt install openssh-client -y
 
 # Install wget
-apt -y install wget
+sudo apt install wget -y
 
 # Install OpenVPN
 #Source https://ubuntuhandbook.org/index.php/2022/10/setup-openvpn-ubuntu-2204/amp/
-wget https://git.io/vpn -O openvpn-install.sh
+sudo wget https://git.io/vpn -O openvpn-install.sh
 
-chmod u+x openvpn-install.sh
-bash openvpn-install.sh
+sudo chmod u+x openvpn-install.sh
+sudo bash openvpn-install.sh
