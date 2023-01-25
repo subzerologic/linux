@@ -1,4 +1,5 @@
 #!/bin/bash
+# run this script: bash linux_post_install.sh 
 
 # apt repository
 sudo apt update
