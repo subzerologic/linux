@@ -22,7 +22,8 @@ sudo echo "Port 9922" >> /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
 # Allow ssh port on iptables
-sudo iptables -I INPUT -p tcp --dport 9922 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 9922 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --sport 9922 -m conntrack --ctstate ESTABLISHED -j ACCEPT
 
 # Install OpenVPN
 #Source https://ubuntuhandbook.org/index.php/2022/10/setup-openvpn-ubuntu-2204/amp/
