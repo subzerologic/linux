@@ -1,6 +1,6 @@
 #!/bin/bash
 # run this script:
-#sudo wget https://github.com/subzerologic/linux/edit/main/linux_post_install.sh -O linux_post_install.sh
+#sudo wget https://github.com/subzerologic/linux/edit/main/linux_post_install.sh -O linuxPostInstall.sh
 #sudo chmod u+x linux_post_install.sh
 #sudo bash linux_post_install.sh
 
