@@ -1,6 +1,6 @@
 #!/bin/bash
 # run this script:
-#sudo wget https://raw.githubusercontent.com/subzerologic/linux/main/linuxPostInstall.sh -O linuxPostInstall.sh
+#sudo wget -O linuxPostInstall.sh https://raw.githubusercontent.com/subzerologic/linux/main/linuxPostInstall.sh 
 #sudo chmod u+x linuxPostInstall.sh
 #sudo bash linuxPostInstall.sh
 
@@ -27,6 +27,6 @@ sudo iptables -A OUTPUT -p tcp --sport 9922 -m conntrack --ctstate ESTABLISHED -
 
 # Install OpenVPN
 #Source https://ubuntuhandbook.org/index.php/2022/10/setup-openvpn-ubuntu-2204/amp/
-sudo wget https://git.io/vpn -O openvpn-install.sh
+sudo wget -O openvpn-install.sh https://git.io/vpn 
 sudo chmod u+x openvpn-install.sh
 sudo bash openvpn-install.sh
