@@ -17,10 +17,6 @@ sudo apt install ddclient
 sudo apt install openssh-server -y
 sudo apt install openssh-client -y
 
-# Change default Port to 9922 and restart ssh
-sudo echo "Port 9922" >> /etc/ssh/sshd_config
-sudo systemctl restart sshd
-
 # Allow ssh port on iptables
 sudo iptables -A INPUT -p tcp --dport 9922 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --sport 9922 -m conntrack --ctstate ESTABLISHED -j ACCEPT
