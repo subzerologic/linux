@@ -1,11 +1,13 @@
 #UFW firewall rules
 
-To                         Action      From
---                         ------      ----
-9922/tcp                   ALLOW       Anywhere
-Anywhere                   ALLOW       Anywhere
-3389/tcp                   ALLOW       Anywhere
-Anywhere on tun0           ALLOW       Anywhere
-9922/tcp (v6)              ALLOW       Anywhere (v6)
-3389/tcp (v6)              ALLOW       Anywhere (v6)
-Anywhere (v6) on tun0      ALLOW       Anywhere (v6)
+     To                         Action      From
+     --                         ------      ----
+[ 1] 9922/tcp                   ALLOW IN    Anywhere
+[ 2] Anywhere                   ALLOW IN    Anywhere
+[ 3] 3389/tcp                   ALLOW IN    Anywhere
+[ 4] Anywhere on tun0           ALLOW IN    Anywhere
+[ 5] Anywhere                   ALLOW OUT   Anywhere on tun0           (out)
+[ 6] 9922/tcp (v6)              ALLOW IN    Anywhere (v6)
+[ 7] 3389/tcp (v6)              ALLOW IN    Anywhere (v6)
+[ 8] Anywhere (v6) on tun0      ALLOW IN    Anywhere (v6)
+[ 9] Anywhere (v6)              ALLOW OUT   Anywhere (v6) on tun0      (out)
