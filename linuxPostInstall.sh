@@ -17,12 +17,22 @@ sudo apt install ddclient
 sudo apt install openssh-server -y
 sudo apt install openssh-client -y
 
-# Allow ssh port on iptables
-sudo iptables -A INPUT -p tcp --dport 9922 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-sudo iptables -A OUTPUT -p tcp --sport 9922 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+#Manually steps to change ssh port
+# nano /etc/ssh/sshd_config and uncommet out the following change the port to what you want it set to
+#Port 9922
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
 
 # Install OpenVPN
 #Source https://ubuntuhandbook.org/index.php/2022/10/setup-openvpn-ubuntu-2204/amp/
 sudo wget -O openvpn-install.sh https://git.io/vpn 
 sudo chmod u+x openvpn-install.sh
 sudo bash openvpn-install.sh
+
+#Adding the ufw rules
+ufw allow 9922 tcp
+ufw allow 3389 tcp
+ufw allow out on tun0
+ufw allow in on tun0
+ufw enable
