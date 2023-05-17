@@ -1,4 +1,6 @@
 #UFW firewall rules
+#sudo ufw allow in on tun0
+#sudo ufw allow out on tun0
 
      To                         Action      From
      --                         ------      ----
